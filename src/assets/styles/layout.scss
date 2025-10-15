@@ -1,0 +1,58 @@
+@import "./variables.scss";
+.layout {
+  height: 100vh;
+  width: 100vw;
+  .header { 
+    width: 100%;
+    height: $--layout-header-height ;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #e6e6e6;
+    .site{
+      padding: 0 20px;
+      font-size: 40px;
+    }
+  }
+
+  .container{
+    display: flex;
+    // width: $--layout-conatiner-width;
+    height: calc(100% - $--layout-header-height);
+    .containerAside{
+      width: $--layout-conatiner-width;
+      height: 100%;
+      border-right: 1px solid #e6e6e6;
+
+
+      .el-menu{
+        border-right: none;
+        height: calc(100% - $--layout-conatiner-fold-height);
+        .el-submenu__title{
+        }
+      }
+
+      .fold{
+        height: $--layout-conatiner-fold-height;
+        width: 100%;
+        text-align: right;
+        padding: 0 20px;
+        box-sizing: border-box;
+
+        .foldBtn{
+          font-size: 30px;
+          cursor: pointer;
+          color: #999999;
+        }
+      }
+    }
+
+    .containerAside.collapse{
+      width: $--layout-conatiner-collapse-width;
+    }
+
+    .containerContent{
+      flex: 1;
+      height: 100%;
+    }
+  }
+}
